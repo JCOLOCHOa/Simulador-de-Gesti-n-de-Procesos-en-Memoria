@@ -103,10 +103,4 @@ class GestorMemoria:
         p.fin_epoch = time.time()
         print(f"[FIN] {p} | RAM usada ahora: {self.ram_usada_mb} MB")
 
-    async def _simular_proceso(self, p: Proceso):
-        try:
-            await asyncio.sleep(p.duracion_s)
-        finally:
-            self.procesos_en_ejecucion.remove(p)
-            self._finalizar_proceso(p)
-  
+    
